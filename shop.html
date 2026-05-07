@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro Marketing</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(to right, green, #00c853);
+    color:white;
+    padding:48px 9px;
+    position:relative;
+    text-align:center;
+}
+
+/* LOGO HEJURU */
+.logo{
+    position:absolute;
+    left:20px;
+    top:10px;
+}
+
+/* LOGO CLICKABLE */
+.logo a{
+    display:block;
+}
+
+.logo img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* IZINA MUNSI YA LOGO */
+.brand-name{
+    position:absolute;
+    left:20px;
+    top:110px;
+    font-size:14px;
+    font-weight:bold;
+    color:#f3f7f3;
+}
+
+nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    margin:10px 15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+/* CONTROLS */
+.controls{
+    text-align:center;
+    margin:20px;
+}
+
+.controls input, .controls select{
+    padding:10px;
+    margin:5px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+/* PRODUCTS GRID */
+.products-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.product-card{
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.price{
+    color:orange;
+    font-weight:bold;
+}
+
+.small{
+    font-size:13px;
+    color:#555;
+}
+
+button{
+    background:green;
+    color:white;
+    border:none;
+    padding:8px;
+    margin-top:5px;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+button:hover{
+    background:#00c853;
+}
+
+/* CART */
+.cart-box{
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    padding:5px;
+    border-bottom:1px solid #eee;
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN */
+/* ========================= */
+
+/* Tablets */
+@media (max-width: 992px){
+    header{
+        padding:40px 15px;
+    }
+
+    .logo img{
+        width:70px;
+        height:70px;
+    }
+
+    .controls input, .controls select{
+        width:90%;
+    }
+
+    .products-container{
+        grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    }
+}
+
+/* Phones */
+@media (max-width: 600px){
+
+    .brand-name{
+        position:static;
+        margin-bottom:10px;
+    }
+
+    .logo{
+        position:static;
+        margin-bottom:10px;
+    }
+
+    header{
+        padding:25px 10px;
+    }
+
+    nav ul{
+        flex-direction:column;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    .controls input, .controls select{
+        width:100%;
+    }
+
+    .products-container{
+        grid-template-columns:1fr;
+        padding:10px;
+    }
+
+    .product-card img{
+        height:140px;
+    }
+
+    .cart-box{
+        margin:10px;
+        padding:15px;
+    }
+
+    .cart-item{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+<header>
+ <div class="logo">
+        <a href="vava.html">
+            <img src="fofo.png">
+        </a>
+    </div>
+
+    <div class="brand-name">RW-RULINDO AGRO MARKETING</div>
+
+    <h1>WELCOME TO AGRO MARKETING</h1>
+    <p>Your best place for farming business</p>
+</header>
+<nav>
+    <ul>
+       <li><a href="vava.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">help</a></li>
+    </ul>
+</nav>
+
+<div style="position: relative; display: inline-block;">
+  <img src="yeye.png" style="width: 100%;">
+  <div style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  ">
+  
+RW-Rulindo Agro Market connects farmers and buyers to promote agriculture,
+    improve income and ensure fresh products reach consumers easily.
+    
+  </div>
+</div>
+
+
+
+<!-- SEARCH + FILTER -->
+<div class="controls">
+    <input type="text" id="search" placeholder="Search product...">
+
+    <select id="category">
+        <option value="all">All Categories</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="fruits">Fruits</option>
+        <option value="carbohydrate">Carbohydrate</option>
+        <option value="protein">Protein</option>
+    </select>
+
+    <select id="price">
+        <option value="all">All Prices</option>
+        <option value="low">Below 500</option>
+        <option value="mid">500 - 1000</option>
+        <option value="high">Above 1000</option>
+    </select>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products-container">
+
+<div class="product-card" data-name="Potatoes" data-category="carbohydrate" data-price="400">
+<img src="14.jfif">
+<h3>Potatoes - 1kg</h3>
+<p class="price">400 RWF</p>
+<p class="small">Farmer: Jean uwimana</p>
+<button onclick="addToCart('Potatoes',400)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Beans" data-category="protein" data-price="700">
+<img src="5.jfif">
+<h3>Beans - 1kg</h3>
+<p class="price">700 RWF</p>
+<p class="small">Farmer: pierre habimana</p>
+<button onclick="addToCart('Beans',700)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Cabbage" data-category="vegetables" data-price="500">
+<img src="da.jfif">
+<h3>Cabbage - 1kg</h3>
+<p class="price">500 RWF</p>
+<p class="small">Farmer: innocent niyonsaba</p>
+<button onclick="addToCart('Cabbage',500)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Tomatoes" data-category="vegetables" data-price="600">
+<img src="2.jfif">
+<h3>Tomatoes - 1kg</h3>
+<p class="price">600 RWF</p>
+<p class="small">Farmer: eric nshimiyimana</p>
+<button onclick="addToCart('Tomatoes',600)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Mangoes" data-category="fruits" data-price="300">
+<img src="17.jfif">
+<h3>Mangoes - 1kg</h3>
+<p class="price">300 RWF</p>
+<p class="small">Farmer: orivier ndayisaba</p>
+<button onclick="addToCart('Mangoes',300)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Onions" data-category="vegetables" data-price="450">
+<img src="7.jfif">
+<h3>Onions - 1kg</h3>
+<p class="price">450 RWF</p>
+<p class="small">Farmer: chantal uwase</p>
+<button onclick="addToCart('Onions',450)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Maize" data-category="carbohydrate" data-price="800">
+<img src="4.jfif">
+<h3>Maize - 1kg</h3>
+<p class="price">800 RWF</p>
+<p class="small">Farmer: marie cloudine</p>
+<button onclick="addToCart('Maize',800)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Cassava" data-category="carbohydrate" data-price="350">
+<img src="16.jfif">
+<h3>Cassava - 1kg</h3>
+<p class="price">350 RWF</p>
+<p class="small">Farmer: Agnes mukamana</p>
+<button onclick="addToCart('Cassava',350)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Passion fruits" data-category="fruits" data-price="1200">
+<img src="de.jfif">
+<h3>Passion fruits - 1kg</h3>
+<p class="price">1200 RWF</p>
+<p class="small">Farmer: solange uwitonze</p>
+<button onclick="addToCart('Passion fruits',1200)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Avocados" data-category="fruits" data-price="500">
+<img src="6.jfif">
+<h3>Avocados - 1kg</h3>
+<p class="price">500 RWF</p>
+<p class="small">Farmer: delephine nyirahabimana</p>
+<button onclick="addToCart('Avocados',500)">Add to Cart</button>
+</div>
+
+</div>
+
+<!-- CART -->
+<div class="cart-box">
+    <h2>🛒 Cart</h2>
+    <div id="cartItems"></div>
+    <h3>Total: <span id="total">0</span> RWF</h3>
+</div>
+
+<script>
+let cart = [];
+
+function addToCart(name, price){
+    cart.push({name, price});
+    updateCart();
+}
+
+function updateCart(){
+    let box = document.getElementById("cartItems");
+    box.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach(item=>{
+        let div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `<span>${item.name}</span><span>${item.price} RWF</span>`;
+        box.appendChild(div);
+        total += item.price;
+    });
+
+    document.getElementById("total").textContent = total;
+}
+
+function filterProducts(){
+    let search = document.getElementById("search").value.toLowerCase();
+    let category = document.getElementById("category").value;
+    let price = document.getElementById("price").value;
+
+    document.querySelectorAll(".product-card").forEach(card=>{
+        let name = card.dataset.name.toLowerCase();
+        let cat = card.dataset.category;
+        let pr = parseInt(card.dataset.price);
+
+        let show = true;
+
+        if(!name.includes(search)) show = false;
+        if(category !== "all" && cat !== category) show = false;
+
+        if(price === "low" && pr >= 500) show = false;
+        if(price === "mid" && (pr < 500 || pr > 1000)) show = false;
+        if(price === "high" && pr <= 1000) show = false;
+
+        card.style.display = show ? "block" : "none";
+    });
+}
+
+document.getElementById("search").addEventListener("input", filterProducts);
+document.getElementById("category").addEventListener("change", filterProducts);
+document.getElementById("price").addEventListener("change", filterProducts);
+</script>
+
+<footer style="background:#000; color:#fff; text-align:center; padding:20px; margin-top:40px;">
+    <p>RW-Rulindo Agro Marketing Cooperative</p>
+    <p>Rulindo District, Northern Province, Rwanda</p>
+    <p>Phone: +250 788 123 456</p>
+    <p>Email: info@rulindooagro.rwa</p>
+
+    <div style="margin-top:15px;">
+        <a href="https://facebook.com" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📘 Facebook</a>
+        <a href="https://wa.me/250788123456" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📱 WhatsApp</a>
+        <a href="https://twitter.com" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">🐦 Twitter</a>
+        <a href="https://www.instagram.com/" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📸 Instagram</a>
+    </div>
+</footer>
+</body>
+</html>

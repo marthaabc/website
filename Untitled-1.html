@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RW-Rulindo Agro Market</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(to right, green, #00c853);
+    color:white;
+    padding:48px 9px;
+    position:relative;
+    text-align:center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo{
+    position:absolute;
+    left:20px;
+    top:10px;
+}
+
+.logo img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.brand-name{
+    position:absolute;
+    left:20px;
+    top:110px;
+    font-size:14px;
+    font-weight:bold;
+    color:#eaeeea;
+}
+
+/* NAV */
+nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    margin:10px 15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+/* IMAGE TEXT */
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    text-align:center;
+    animation: fadeIn 2s ease;
+}
+
+/* CONTROLS */
+.controls input, .controls select{
+    width:90%;
+    margin:10px;
+    padding:10px;
+}
+
+/* PRODUCTS HORIZONTAL */
+.products-container{
+    display:flex;
+    overflow-x:auto;
+    gap:20px;
+    padding:20px;
+}
+
+.product-card{
+    min-width:220px;
+    background:white;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    flex-shrink:0;
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.product-card img{
+    width:100%;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.product-card img:hover{
+    transform:scale(1.1);
+}
+
+button{
+    margin-top:10px;
+    padding:8px;
+    background:green;
+    color:white;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+/* CART */
+.cart-box{
+    background:white;
+    padding:20px;
+    margin:20px;
+    border-radius:10px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Hide scrollbar */
+.products-container::-webkit-scrollbar{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="vava.html">
+            <img src="fofo.png">
+        </a>
+    </div>
+
+    <div class="brand-name">RW-RULINDO AGRO MARKETING</div>
+
+    <h1>WELCOME TO AGRO MARKETING</h1>
+    <p>Your best place for farming business</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="vava.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+    </ul>
+</nav>
+
+<div style="position: relative; display: inline-block; width:100%;">
+  <img src="yeye.png" style="width: 100%;">
+  <div class="hero-text">
+RW-Rulindo Agro Market connects farmers and buyers to promote agriculture,
+improve income and ensure fresh products reach consumers easily.
+  </div>
+</div>
+
+<div class="controls">
+    <input type="text" id="search" placeholder="Search product...">
+    <select id="category">
+        <option value="all">All Categories</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="fruits">Fruits</option>
+        <option value="carbohydrate">Carbohydrate</option>
+        <option value="protein">Protein</option>
+    </select>
+
+    <select id="price">
+        <option value="all">All Prices</option>
+        <option value="low">Below 500</option>
+        <option value="mid">500 - 1000</option>
+        <option value="high">Above 1000</option>
+    </select>
+</div>
+
+<div class="products-container">
+
+<!-- PRODUCTS (same as yours) -->
+<div class="product-card" data-name="Potatoes" data-category="carbohydrate" data-price="400">
+<img src="14.jfif">
+<h3>Potatoes - 1kg</h3>
+<p>400 RWF</p>
+<button onclick="addToCart('Potatoes',400)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Beans" data-category="protein" data-price="700">
+<img src="5.jfif">
+<h3>Beans - 1kg</h3>
+<p>700 RWF</p>
+<button onclick="addToCart('Beans',700)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Cabbage" data-category="vegetables" data-price="500">
+<img src="da.jfif">
+<h3>Cabbage - 1kg</h3>
+<p>500 RWF</p>
+<button onclick="addToCart('Cabbage',500)">Add to Cart</button>
+</div>
+
+<div class="product-card" data-name="Tomatoes" data-category="vegetables" data-price="600">
+<img src="2.jfif">
+<h3>Tomatoes - 1kg</h3>
+<p>600 RWF</p>
+<button onclick="addToCart('Tomatoes',600)">Add to Cart</button>
+</div>
+
+<!-- add others same way -->
+
+</div>
+
+<div class="cart-box">
+    <h2>🛒 Cart</h2>
+    <div id="cartItems"></div>
+    <h3>Total: <span id="total">0</span> RWF</h3>
+</div>
+
+<script>
+let cart = [];
+
+function addToCart(name, price){
+    cart.push({name, price});
+    updateCart();
+}
+
+function updateCart(){
+    let box = document.getElementById("cartItems");
+    box.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item=>{
+        let div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `<span>${item.name}</span><span>${item.price} RWF</span>`;
+        box.appendChild(div);
+        total += item.price;
+    });
+
+    document.getElementById("total").textContent = total;
+}
+</script>
+
+<section class="p-10 bg-gray-200 text-center">
+  <h2 class="text-2xl font-bold text-green-700">Contact Us</h2>
+  <p>Email: info@agromarket.rw</p>
+  <p>Phone: +250 735 907 160</p>
+</section>
+
+<footer style="background:#000; color:#fff; text-align:center; padding:20px;">
+    <p>RW-Rulindo Agro Marketing Cooperative</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - RW Agro Market</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-green-50 flex items-center justify-center h-screen">
+
+<div class="bg-white p-6 rounded shadow w-96">
+
+  <h2 class="text-2xl font-bold text-green-700 text-center">Login</h2>
+  <p class="text-center text-gray-500 mb-4">Welcome back 👋</p>
+
+  <!-- FORM -->
+  <input id="username" type="text" placeholder="Username"
+    class="w-full p-2 border rounded mb-3">
+
+  <input id="password" type="password" placeholder="Password"
+    class="w-full p-2 border rounded mb-3">
+
+  <button onclick="loginUser()"
+    class="bg-green-600 text-white w-full p-2 rounded font-bold">
+    Login
+  </button>
+
+  <p id="msg" class="text-red-500 text-center mt-2"></p>
+
+</div>
+
+<script>
+
+// SIMPLE USERS DATABASE (for demo)
+let users = [
+  {username:"admin", password:"1234"},
+  {username:"farmer", password:"1111"},
+  {username:"buyer", password:"2222"}
+];
+
+function loginUser(){
+
+  let user = document.getElementById("username").value;
+  let pass = document.getElementById("password").value;
+  let msg = document.getElementById("msg");
+
+  let found = users.find(u => u.username === user && u.password === pass);
+
+  if(found){
+
+    // SAVE SESSION
+    localStorage.setItem("user", user);
+
+    msg.style.color = "green";
+    msg.innerText = "Login successful ✔";
+
+    setTimeout(()=>{
+      window.location.href = "index.html";
+    }, 1000);
+
+  }else{
+    msg.innerText = "Invalid username or password ❌";
+  }
+}
+
+</script>
+
+</body>
+</html>

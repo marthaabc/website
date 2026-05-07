@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro Marketing</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(to right, green, #00c853);
+    color:white;
+    padding:48px 9px;
+    position:relative;
+    text-align:center;
+}
+
+/* LOGO HEJURU */
+.logo{
+    position:absolute;
+    left:20px;
+    top:10px;
+}
+
+/* LOGO CLICKABLE */
+.logo a{
+    display:block;
+}
+
+.logo img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* IZINA MUNSI YA LOGO */
+.brand-name{
+    position:absolute;
+    left:20px;
+    top:110px;
+    font-size:14px;
+    font-weight:bold;
+    color:#eaeeea;
+}
+
+nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    margin:10px 15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+
+/* LAYOUT */
+.container{
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:30%;
+    background:#222;
+    color:white;
+    height:100vh;
+    padding:20px;
+    position:sticky;
+    top:0;
+}
+
+.sidebar input{
+    width:100%;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    margin-bottom:15px;
+}
+
+.question-list{
+    max-height:80vh;
+    overflow-y:auto;
+}
+
+.q-item{
+    padding:10px;
+    border-bottom:1px solid #444;
+    cursor:pointer;
+}
+
+.q-item:hover{
+    background:green;
+}
+
+/* MAIN */
+.main{
+    width:70%;
+    padding:20px;
+}
+
+.answer-box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    min-height:200px;
+}
+
+h2{
+    color:green;
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN (ADDED) */
+/* ========================= */
+
+@media(max-width:900px){
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar, .main{
+        width:100%;
+        height:auto;
+    }
+
+    .sidebar{
+        position:relative;
+    }
+}
+
+@media(max-width:768px){
+
+    header{
+        padding:80px 20px 40px;
+    }
+
+    .brand-name{
+        position:static;
+        display:block;
+        text-align:center;
+        margin-bottom:10px;
+    }
+
+    .logo{
+        position:static;
+        text-align:center;
+        margin-bottom:10px;
+    }
+
+    .logo img{
+        width:70px;
+        height:70px;
+    }
+
+    nav ul{
+        flex-direction:column;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    .sidebar{
+        height:auto;
+    }
+
+    .question-list{
+        max-height:300px;
+    }
+}
+
+@media(max-width:480px){
+
+    h1{
+        font-size:22px;
+    }
+
+    header p{
+        font-size:14px;
+    }
+
+    nav ul li a{
+        font-size:14px;
+    }
+
+    .answer-box{
+        font-size:14px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+     <div class="logo">
+        <a href="vava.html">
+            <img src="fofo.png">
+        </a>
+    </div>
+
+    <div class="brand-name">RW-RULINDO AGRO MARKETING</div>
+
+    <h1>WELCOME TO AGRO MARKETING</h1>
+    <p>Your best place for farming business</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="vava.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">help</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <input type="text" id="searchBox" placeholder="Search question...">
+    <div class="question-list" id="questionList"></div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+    <h2>Answer Panel</h2>
+    <div class="answer-box" id="answerBox">
+        Select or search a question to see answer here...
+    </div>
+</div>
+
+</div>
+
+<script>
+
+let faq = [
+    {q:"How to grow potatoes?", a:"Prepare soil, plant seeds, water regularly, and harvest after 3-4 months."},
+    {q:"Best fertilizer for maize?", a:"Use NPK fertilizer and organic manure."},
+    {q:"How to control pests?", a:"Use pesticides or natural methods like neem solution."},
+    {q:"When to plant beans?", a:"Plant beans at the beginning of rainy season."},
+    {q:"How to store cassava?", a:"Keep in dry place or process into flour."},
+    {q:"How to irrigate crops?", a:"Use drip irrigation or watering cans."},
+    {q:"Best season for farming?", a:"Rainy season is best for most crops."},
+    {q:"How to sell crops online?", a:"Use agro marketing platform and add products."},
+    {q:"How to register as farmer?", a:"Contact cooperative administration office."},
+    {q:"How to improve soil fertility?", a:"Use compost and crop rotation."},
+];
+
+let baseQuestions = [
+"How to grow crops?",
+"How to increase yield?",
+"How to prevent crop diseases?",
+"How to harvest crops?",
+"How to store grains?",
+"How to transport crops?",
+"How to use fertilizer?",
+"How to water plants?",
+"How to sell farm products?",
+"How to start farming business?"
+];
+
+for(let i=0;i<50;i++){
+    baseQuestions.forEach((q, index)=>{
+        faq.push({
+            q: q + " #" + (i*10+index),
+            a: "This is a farming guidance answer for: " + q + ". Follow best agricultural practices."
+        });
+    });
+}
+
+let list = document.getElementById("questionList");
+
+function renderList(data){
+    list.innerHTML = "";
+    data.forEach((item, index)=>{
+        let div = document.createElement("div");
+        div.className = "q-item";
+        div.innerText = item.q;
+        div.onclick = ()=> showAnswer(index);
+        list.appendChild(div);
+    });
+}
+renderList(faq);
+
+document.getElementById("searchBox").addEventListener("input", function(){
+    let value = this.value.toLowerCase();
+
+    let filtered = faq.filter(item =>
+        item.q.toLowerCase().includes(value)
+    );
+
+    renderList(filtered);
+});
+
+function showAnswer(index){
+    document.getElementById("answerBox").innerText =
+        faq[index].q + "\n\nAnswer:\n" + faq[index].a;
+}
+
+</script>
+
+<footer style="background:#000; color:#fff; text-align:center; padding:20px; margin-top:40px;">
+<p>RW-Rulindo Agro Marketing Cooperative</p>
+<p>Rulindo District, Northern Province, Rwanda</p>
+<p>Phone: +250 788 123 456</p>
+<p>Email: info@rulindooagro.rwa</p>
+
+<div style="margin-top:15px;">
+<a href="https://facebook.com" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📘 Facebook</a>
+<a href="https://wa.me/250788123456" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📱 WhatsApp</a>
+<a href="https://twitter.com" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">🐦 Twitter</a>
+<a href="https://www.instagram.com/" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📸 Instagram</a>
+</div>
+</footer>
+
+</body>
+</html>

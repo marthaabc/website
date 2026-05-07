@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - RW Agro Market</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(to right, green, #00c853);
+    color:white;
+    padding:9px 9px;
+    position:relative;
+    text-align:center;
+    top:10px;
+}
+
+/ LOGO HEJURU */
+.logo{
+    position:absolute;
+    left:20px;
+    top:10px;
+}
+
+/* LOGO CLICKABLE */
+.logo a{
+    display:block;
+}
+
+.logo img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* IZINA MUNSI YA LOGO */
+.brand-name{
+    position:absolute;
+    left:20px;
+    down:110px;
+    font-size:14px;
+    font-weight:bold;
+    color:#f3f7f3;
+}
+
+nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    margin:10px 15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+
+
+    .logo{
+        position:static;
+        text-align:left;
+        margin-bottom:10px;
+    }
+
+    .logo img{
+        width:90px;
+        height:90px;
+    }
+
+
+
+/* TITLE */
+header h1{
+    margin-top:10px;
+    font-size:22px;
+    top:10px;
+}
+
+header p{
+    font-size:14px;
+    top:10px;
+}
+
+/* ===== PAGE SECTION ===== */
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* BOX */
+.box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* INPUTS */
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:10px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0a8f3c;
+}
+
+/* INFO */
+.info p{
+    margin:10px 0;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:green;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+    .container{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="header-top">
+        <div class="logo">
+            <a href="vava.html">
+                <img src="fofo.png">
+            </a>
+        </div>
+
+        <div class="brand-name">RW-RULINDO AGRO MARKETING</div>
+    </div>
+
+    <h1>WELCOME TO AGRO MARKETING</h1>
+    <p>you best place for farming business</p>
+
+</header>
+
+<!-- NAV -->
+<nav>
+    <ul>
+        <li><a href="vava.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+    </ul>
+</nav>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <!-- FORM -->
+    <div class="box">
+        <h2>Send Message</h2>
+
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- INFO -->
+    <div class="box info">
+        <h2>Contact Info</h2>
+
+        <p>📍 Kigali, Rwanda</p>
+        <p>📞 +250 735 907 160</p>
+        <p>📧 info@agromarket.rw</p>
+
+        <h3>Social Media</h3>
+        <p>Facebook | Instagram | WhatsApp</p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>RW-Rulindo Agro Market © 2026</p>
+</footer>
+
+<script>
+function sendMessage(){
+    alert("Message sent successfully ✅");
+}
+</script>
+
+</body>
+</html>

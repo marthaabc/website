@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rulindo Sectors Agriculture</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+    font-family:Arial;
+    margin:0;
+    background:#f4f7f5;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(to right, green, #00c853);
+    color:white;
+    padding:40px;
+    text-align:center;
+    position:relative;
+}
+
+.logo{
+    position:absolute;
+    left:20px;
+    top:10px;
+}
+
+.logo img{
+    width:80px;
+    height:80px;
+    border-radius:10px;
+}
+
+.brand-name{
+    position:absolute;
+    left:20px;
+    top:100px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* NAV */
+nav{
+    background:#222;
+    padding:15px;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    margin:10px 15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+/* HERO */
+.hero{
+    position:relative;
+}
+
+.hero img{
+    width:100%;
+    height: 50%;
+}
+
+/* HERO TEXT */
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    text-align:center;
+    background:rgba(0,0,0,0.4);
+    padding:20px;
+    border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+    
+<header>
+     <div class="logo">
+        <a href="vava.html">
+            <img src="fofo.png">
+        </a>
+    </div>
+
+    <div class="brand-name">RW-RULINDO AGRO MARKETING</div>
+
+    <h1>WELCOME TO AGRO MARKETING</h1>
+    <p>Your best place for farming business</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="vava.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">help</a></li>
+    </ul>
+</nav>
+
+
+
+<div class="container">
+<canvas id="chart"></canvas>
+<p class="info">📊 Each sector shows dominant agricultural production</p>
+</div>
+
+<script>
+
+const ctx = document.getElementById('chart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+            'Burega','Bushoki','Buyoga','Cyinzuzi','Cyungo',
+            'Kinihira','Kisaro','Masoro','Mbogo','Murambi',
+            'Ngoma','Ntarabana','Rukozo','Rusiga','Shyorongi','Tumba'
+        ],
+        datasets: [
+            {
+                label: 'Potatoes 🌱',
+                data: [90,80,85,70,60,95,88,70,75,80,85,90,60,88,92,70],
+                backgroundColor:'#4caf50'
+            },
+            {
+                label: 'Beans 🌾',
+                data: [70,75,80,65,60,78,72,68,70,74,76,80,60,70,78,65],
+                backgroundColor:'#2e7d32'
+            },
+            {
+                label: 'Maize 🌽',
+                data: [60,65,70,55,50,72,68,60,62,66,70,75,50,65,70,55],
+                backgroundColor:'#81c784'
+            }
+        ]
+    },
+
+    options: {
+        responsive:true,
+        scales:{
+            y:{
+                beginAtZero:true,
+                max:100
+            }
+        }
+    }
+});
+
+</script>
+
+<footer style="background:#000; color:#fff; text-align:center; padding:20px; margin-top:40px;">
+<p>RW-Rulindo Agro Marketing Cooperative</p>
+<p>Rulindo District, Northern Province, Rwanda</p>
+<p>Phone: +250 788 123 456</p>
+<p>Email: info@rulindooagro.rwa</p>
+
+<div style="margin-top:15px;">
+<a href="https://facebook.com" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📘 Facebook</a>
+<a href="https://wa.me/250788123456" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📱 WhatsApp</a>
+<a href="https://twitter.com" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">🐦 Twitter</a>
+<a href="https://www.instagram.com/" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📸 Instagram</a>
+</div>
+</footer>
+
+</body>
+</html>

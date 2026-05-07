@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroMarket System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(to right, green, #00c853);
+    color:white;
+    padding:60px 20px;
+    text-align:center;
+    position:relative;
+}
+
+.logo{
+    position:absolute;
+    left:20px;
+    top:10px;
+}
+
+.logo img{
+    width:80px;
+    border-radius:10px;
+}
+
+.brand-name{
+    position:absolute;
+    left:20px;
+    top:90px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* NAV */
+nav{
+    background:#222;
+    padding:15px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    margin:10px 15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+/* SECTIONS */
+.section{
+    display:none;
+    padding:20px;
+}
+
+.active{
+    display:block;
+}
+
+/* BOX */
+.box{
+    background:white;
+    padding:20px;
+    max-width:400px;
+    margin:20px auto;
+    border-radius:10px;
+}
+
+input, button{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    background:green;
+    color:white;
+    border:none;
+}
+
+/* CART */
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    background:white;
+    margin:10px;
+    padding:10px;
+    border-radius:10px;
+}
+
+/* ORDERS */
+.order{
+    background:white;
+    margin:10px;
+    padding:15px;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+  
+<header>
+    <div class="logo">
+        <a href="vava.html">
+            <img src="fofo.png">
+        </a>
+    </div>
+
+    <div class="brand-name">RW-RULINDO AGRO MARKETING</div>
+
+    <h1>WELCOME TO AGRO MARKETING</h1>
+    <p>Your best place for farming business</p>
+</header>
+
+
+
+<nav>
+    <ul>
+        <li><a href="website.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+    </ul>
+</nav>
+
+
+<!-- LOGIN -->
+<div id="login" class="section active">
+    <div class="box">
+        <h2>Login 🔐</h2>
+        <input id="user" placeholder="Username">
+        <input id="pass" type="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="section">
+    <h2>Products</h2>
+    <button onclick="addToCart()">Add Tomatoes (500)</button>
+</div>
+
+<!-- CART -->
+<div id="cart" class="section">
+    <h2>Cart 🛒</h2>
+    <div id="cartItems"></div>
+    <button onclick="pay()">Pay with MoMo 💳</button>
+</div>
+
+<!-- ORDERS -->
+<div id="orders" class="section">
+    <h2>Orders 📦</h2>
+    <div id="ordersList"></div>
+</div>
+
+<script>
+// LOGIN
+function login(){
+    let u = document.getElementById("user").value;
+    if(!u) return alert("Enter username");
+    localStorage.setItem("user", u);
+    show("home");
+}
+
+// LOGOUT
+function logout(){
+    localStorage.removeItem("user");
+    location.reload();
+}
+
+// NAVIGATION
+function show(id){
+    if(!localStorage.getItem("user")){
+        return alert("Login first");
+    }
+
+    document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+
+    if(id==="cart") displayCart();
+    if(id==="orders") displayOrders();
+}
+
+// CART
+let cart = JSON.parse(localStorage.getItem("cart"))||[];
+
+function addToCart(){
+    cart.push({name:"Tomatoes", price:500, qty:1});
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Added to cart");
+}
+
+function displayCart(){
+    let c = document.getElementById("cartItems");
+    c.innerHTML="";
+    cart.forEach(i=>{
+        c.innerHTML+=`<div class="cart-item">${i.name} - ${i.price}</div>`;
+    });
+}
+
+// PAYMENT SIMULATION
+function pay(){
+    let phone = prompt("Enter phone:");
+    if(!phone) return;
+
+    alert("Processing payment...");
+    setTimeout(()=>{
+        alert("Payment successful ✅");
+        checkout();
+    },2000);
+}
+
+// SAVE ORDER
+function checkout(){
+    let orders = JSON.parse(localStorage.getItem("orders"))||[];
+
+    let total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+
+    orders.push({
+        id:Date.now(),
+        items:cart,
+        total:total,
+        status:"paid"
+    });
+
+    localStorage.setItem("orders", JSON.stringify(orders));
+    localStorage.removeItem("cart");
+    cart=[];
+
+    show("orders");
+}
+
+// DISPLAY ORDERS
+function displayOrders(){
+    let o = JSON.parse(localStorage.getItem("orders"))||[];
+    let box = document.getElementById("ordersList");
+    box.innerHTML="";
+
+    o.forEach(or=>{
+        box.innerHTML+=`
+        <div class="order">
+            <h3>Order ${or.id}</h3>
+            <p>Total: ${or.total}</p>
+            <p>Status: ${or.status}</p>
+        </div>`;
+    });
+}
+</script>
+
+</body>
+</html>

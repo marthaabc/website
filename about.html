@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - AgroMarket</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+/* BACK BUTTON */
+.back-btn {
+  display: inline-block;
+  margin: 10px;
+  background: #1b5e20;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
+/* ABOUT SECTION */
+.about {
+    padding: 60px 20px;
+    background: white;
+    text-align: center;
+}
+
+.about h1 {
+    color: #1b5e20;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* CARDS */
+.about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.card {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+/* MAP */
+.map {
+    margin-top: 40px;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+/* TEAM */
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.member {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 12px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.member:hover {
+    transform: scale(1.05);
+}
+
+.member img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.member h3 {
+    margin: 10px 0 5px;
+    color: #2e7d32;
+}
+
+.member p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(to right, green, #00c853);
+    color:white;
+    padding:35px 9px;
+    position:relative;
+    text-align:center;
+}
+
+/* LOGO HEJURU */
+.logo{
+    position:absolute;
+    left:20px;
+    top:10px;
+}
+
+/* LOGO CLICKABLE */
+.logo a{
+    display:block;
+}
+
+.logo img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* IZINA MUNSI YA LOGO */
+.brand-name{
+    position:absolute;
+    left:20px;
+    top:110px;
+    font-size:14px;
+    font-weight:bold;
+    color:#f3f7f3;
+}
+
+nav{
+    background:#222;
+    padding:10px;
+    text-align:center;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    margin:10px 15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+
+</style>
+
+</head>
+
+<body>
+    
+
+<header>
+    <div class="logo">
+        <a href="vava.html">
+            <img src="fofo.png">
+        </a>
+    </div>
+
+    <div class="brand-name">RW-RULINDO AGRO MARKETING</div>
+
+    <h1>WELCOME TO AGRO MARKETING</h1>
+    <p>Your best place for farming business</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="vava.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+    </ul>
+</nav>
+
+
+
+     <!-- BACK BUTTON -->
+<button onclick="goBack()" class="back-btn">⬅ Back to Home</button>
+
+<section class="about">
+    <h1>About Us</h1>
+    <p>
+        RW-Rulindo Agro Market is a platform that helps farmers sell their
+        agricultural products easily while connecting buyers and sellers
+        in a fast and reliable way.
+    </p>
+
+    <!-- CARDS -->
+    <div class="about-cards">
+        <div class="card">
+            <h3>🌱 Mission</h3>
+            <p>To promote agriculture and help farmers access better markets.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Vision</h3>
+            <p>To become the leading online marketplace for agricultural products in Rwanda.</p>
+        </div>
+
+        <div class="card">
+            <h3>🤝 Values</h3>
+            <p>Integrity, collaboration, and delivering quality service.</p>
+        </div>
+    </div>
+
+    <!-- TEAM -->
+    <div class="team">
+        <div class="member">
+            <img src="10.jfif" alt="Farmer">
+            <h3>Farmer Jean</h3>
+            <p>Fruit Producer</p>
+        </div>
+
+        <div class="member">
+            <img src="5.jfif" alt="Farmer">
+            <h3>Farmer Aline</h3>
+            <p>Bean Farmer</p>
+        </div>
+
+        <div class="member">
+            <img src="7.jfif" alt="Farmer">
+            <h3>Farmer Eric</h3>
+            <p>Onion Trader</p>
+        </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="map">
+        <h3>Find Us 📍</h3>
+        <iframe src="https://maps.google.com/maps?q=Rulindo%20Rwanda&output=embed"></iframe>
+    </div>
+    </section>
+    <script>
+        function goBack() {
+  window.history.back();
+}
+    </script>
+    
+<footer style="background:#000; color:#fff; text-align:center; padding:20px; margin-top:40px;">
+    <p>RW-Rulindo Agro Marketing Cooperative</p>
+    <p>Rulindo District, Northern Province, Rwanda</p>
+    <p>Phone: +250 788 123 456</p>
+    <p>Email: info@rulindooagro.rwa</p>
+
+    <div style="margin-top:15px;">
+        <a href="https://facebook.com" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📘 Facebook</a>
+        <a href="https://wa.me/250788123456" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📱 WhatsApp</a>
+        <a href="https://twitter.com" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">🐦 Twitter</a>
+        <a href="https://www.instagram.com/" target="_blank" style="color:white; text-decoration:none; margin:0 10px;">📸 Instagram</a>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
